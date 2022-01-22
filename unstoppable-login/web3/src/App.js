@@ -55,14 +55,13 @@ class App extends Component {
     this.props.web3ReactHook
       .activate(uauth, null, true)
       .then(async (res) => {
-        let user = await uauth.user();
         uauth
           .getAccount()
           .then((account) => {
             this.setState({
               isConnected: true,
-              showDomain: true,
-              domain: user.sub,
+              showDomain: true
+
             });
           })
           .catch((e) => {
