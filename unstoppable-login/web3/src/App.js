@@ -64,6 +64,7 @@ class App extends Component {
             this.setState({
               isConnected: true,
               showDomain: true,
+              domain: localStorage.getItem("uauth-default-username")
             });
           })
           .catch((e) => {
