@@ -54,14 +54,16 @@ class App extends Component {
   async connectUnstoppable() {
     this.props.web3ReactHook
       .activate(uauth, null, true)
+      console.log(uauth)
+      console.log(uauth
+        .getAccount())
       .then(async (res) => {
         uauth
           .getAccount()
           .then((account) => {
             this.setState({
               isConnected: true,
-              showDomain: true
-
+              showDomain: true,
             });
           })
           .catch((e) => {
@@ -93,7 +95,7 @@ class App extends Component {
       let address;
       let hash = this.props.web3ReactHook.account;
       if (this.state.showDomain) {
-        address = "Unstoppable Domain:" + this.state.domain +" "+ hash;
+        address = "Unstoppable Domain:" + this.state.domain + " " + hash;
       } else {
         address = "Wallet:" + hash;
       }
@@ -107,11 +109,7 @@ class App extends Component {
     } else {
       connectAction = (
         <>
-          <button
-            onClick={this.connectMetamask}
-          >
-            Login with Metamask
-          </button>
+          <button onClick={this.connectMetamask}>Login with Metamask</button>
 
           <button onClick={this.connectUnstoppable}>
             Login with Unstoppable
@@ -123,13 +121,8 @@ class App extends Component {
   }
 
   render() {
-    
     let chooseConnection = this.listConnections();
-    return (
-      <div className="loginFrame">
-        {chooseConnection}
-      </div>
-    );
+    return <div className="loginFrame">{chooseConnection}</div>;
   }
 }
 
