@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    margin:3rem;
+    font-family:'Poppins';
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.title{
+    align-items: center;
+}
+.connect{
+    align-items: center;
+    text-align: center;
+}
+.claim-as{
+    padding-bottom: 0.3rem;
+    font-size: 1.2rem;
+    color: #B0B0B0;
+}
+.blue{
+    color: #4c47f7;
+}
+.header{
+    display:flex;
+    justify-content: space-between;
+}

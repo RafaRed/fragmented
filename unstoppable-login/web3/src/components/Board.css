@@ -1,0 +1,16 @@
+.board{
+    width: 1800px;
+    height: 750px;
+    background-color: #d4d4d4;
+}
+.space{
+    margin-bottom: 10px;
+}
+table,tr,td{
+
+}
+.block{
+    width: 10px;
+    height: 10px;
+    background-color: rgb(231, 231, 231);
+}
