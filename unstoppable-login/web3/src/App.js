@@ -54,7 +54,7 @@ class App extends Component {
   async connectUnstoppable() {
     this.props.web3ReactHook
       .activate(uauth, null, true)
-      console.log(uauth)
+      //console.log(uauth)
       .then(async (res) => {
         uauth
           .getAccount()
