@@ -3,25 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ethersproject/providers": "^5.5.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.0",
-    "@types/node": "^16.11.21",
-    "@types/react": "^17.0.38",
-    "@types/react-dom": "^17.0.11",
     "@uauth/js": "^0.7.9",
     "@uauth/web3-react": "^0.7.9",
-    "@unstoppabledomains/resolution": "^5.0.2",
-    "@web3-react/abstract-connector": "^6.0.7",
-    "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
-    "@web3-react/walletconnect-connector": "^6.2.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.5.5",
+    "react-scripts": "4.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -47,8 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "dotenv": "^14.2.0"
   }
 }
