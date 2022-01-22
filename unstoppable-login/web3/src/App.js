@@ -55,8 +55,6 @@ class App extends Component {
     this.props.web3ReactHook
       .activate(uauth, null, true)
       console.log(uauth)
-      console.log(uauth
-        .getAccount())
       .then(async (res) => {
         uauth
           .getAccount()
