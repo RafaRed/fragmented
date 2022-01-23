@@ -130,11 +130,14 @@ class App extends Component {
     uauth.uauth.user()
     .then((data) => {
       if (data) {
-        this.setState({
-          isConnected: true,
-          showDomain: true,
-          domain: localStorage.getItem("uauth-default-username")
-        });
+        if(this.state.isConnected == false){
+          this.setState({
+            isConnected: true,
+            showDomain: true,
+            domain: localStorage.getItem("uauth-default-username")
+          });
+        }
+        
       } else {
 
       }
@@ -145,7 +148,7 @@ class App extends Component {
 
   render() {
     let login = true;
-    {this.fetchData()}
+    
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>
