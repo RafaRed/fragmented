@@ -148,7 +148,7 @@ class App extends Component {
 
   render() {
     let login = true;
-    
+    {this.fetchData()}
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>
