@@ -65,9 +65,8 @@ class App extends Component {
       .then(async (res) => {
         uauth
           .getAccount()
-          window.location.reload()
+
           .then((account) => {
-            window.location.reload()
           })
           .catch((e) => {
             alert(e);
@@ -81,7 +80,7 @@ class App extends Component {
   }
 
   logout() {
-    uauth.uauth.logout();
+
     this.props.web3ReactHook.deactivate();
     injected.deactivate();
     uauth.deactivate();
@@ -90,6 +89,7 @@ class App extends Component {
       showDomain: false,
       domain: "",
     });
+    uauth.uauth.logout();
     window.ethereum.removeListener("chainChanged", window.location.reload());
   }
 
