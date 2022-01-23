@@ -65,11 +65,7 @@ class App extends Component {
         uauth
           .getAccount()
           .then((account) => {
-            this.setState({
-              isConnected: true,
-              showDomain: true,
-              domain: localStorage.getItem("uauth-default-username")
-            });
+            window.location.reload()
           })
           .catch((e) => {
             alert(e);
