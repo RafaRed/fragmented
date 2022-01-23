@@ -58,13 +58,21 @@ class App extends Component {
   }
 
   async connectUnstoppable() {
+    injected.deactivate();
     this.props.web3ReactHook
       .activate(uauth, null, true)
+      
       .then(async (res) => {
         uauth
           .getAccount()
           window.location.reload()
-          
+          .then((account) => {
+            window.location.reload()
+          })
+          .catch((e) => {
+            alert(e);
+            console.error(e);
+          });
       })
       .catch((e) => {
         alert(e);
@@ -74,12 +82,14 @@ class App extends Component {
 
   logout() {
     uauth.uauth.logout();
+    this.props.web3ReactHook.deactivate();
+    injected.deactivate();
+    uauth.deactivate();
     this.setState({
       isConnected: false,
       showDomain: false,
       domain: "",
     });
-
     window.ethereum.removeListener("chainChanged", window.location.reload());
   }
 
