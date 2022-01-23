@@ -60,10 +60,10 @@ class App extends Component {
   async connectUnstoppable() {
     this.props.web3ReactHook
       .activate(uauth, null, true)
-       window.location.reload()
       .then(async (res) => {
         uauth
           .getAccount()
+          window.location.reload()
           .then((account) => {
             window.location.reload()
           })
