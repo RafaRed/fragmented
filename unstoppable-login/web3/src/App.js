@@ -83,6 +83,7 @@ class App extends Component {
   logout() {
     this.props.web3ReactHook.deactivate();
     injected.deactivate();
+    uauth.logout();
     uauth.deactivate();
     this.setState({
       isConnected: false,
@@ -125,6 +126,7 @@ class App extends Component {
 
   render() {
     let login = true;
+    
     console.log(uauth)
     return(
       <>
