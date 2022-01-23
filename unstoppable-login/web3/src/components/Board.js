@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import './Board.css'
 import ReactTooltip from 'react-tooltip';
+import Popup from './Popup'
 
-function createBoard(){
+
+function CreateBoard(props){
+
     let size_x = 181;
     let size_y = 62;
     let rows = [];
@@ -10,8 +13,8 @@ function createBoard(){
       let rowID = `row${i}`
       let cell = []
       for (var idx = 0; idx < size_x; idx++){
-        let cellID = `cell${i}-${idx}`
-        cell.push(<td key={cellID} id={cellID} className="block" data-for='block' data-tip='Claim' onClick={() => { console.log('clicked '+cellID) }}></td>)
+        let cellID = `${idx}-${i}`
+        cell.push(<td key={cellID} id={cellID} className="block" data-for='block' data-tip='Claim' onClick={() => {props.setBlock(cellID);props.setButtonPopup(true)}} ></td>)
       }
       rows.push(<tr key={i} id={rowID}>{cell}</tr>)
     }
@@ -19,14 +22,21 @@ function createBoard(){
 }
 
 function Board() {
-    console.log(createBoard())
     
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [block, setBlock] = useState("0-0");
   return <div>
   <ReactTooltip id='block' place="right" type="info" getContent={(dataTip) => `${dataTip}`}/>
+  <Popup trigger={buttonPopup} block={block} setTrigger={setButtonPopup}>
+    <h1>test</h1>
+  </Popup>
+
   <div className="space"></div>
   <div className="board">
     <table>
-      <tbody>{createBoard()}</tbody>
+      <tbody>
+          <CreateBoard setButtonPopup={setButtonPopup} setBlock={setBlock}/>
+      </tbody>
     </table>
   </div>
 </div>
