@@ -21,6 +21,7 @@ function Popup(props) {
       block_url:url,
       block_img:img
     });
+    props.setTrigger(false);
   }
 
   

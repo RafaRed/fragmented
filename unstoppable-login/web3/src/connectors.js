@@ -10,8 +10,7 @@ export const walletconnect = new WalletConnectConnector({
   qrcode: true,
 })
 
-export const uauth = new UAuthConnector({
-  uauth: new UAuth({
+export const uauth2 = new UAuthConnector({ uauth: new UAuth({
   clientID: process.env.REACT_APP_CLIENT_ID,
   clientSecret: process.env.REACT_APP_CLIENT_SECRET,
   redirectUri: process.env.REACT_APP_REDIRECT_URI,
@@ -20,6 +19,18 @@ export const uauth = new UAuthConnector({
   scope: 'openid wallet',
   connectors: {injected, walletconnect},
   }),
+})
+
+export const uauth = new UAuthConnector({
+
+  clientID: process.env.REACT_APP_CLIENT_ID,
+  clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+  redirectUri: process.env.REACT_APP_REDIRECT_URI,
+  postLogoutRedirectUri: process.env.REACT_APP_POST_LOGOUT_REDIRECT_URI,
+  fallbackIssuer: process.env.REACT_APP_FALLBACK_ISSUER,
+  scope: 'openid wallet',
+  connectors: {injected, walletconnect},
+
 })
 
 var connectors = {

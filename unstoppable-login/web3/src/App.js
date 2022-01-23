@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { Component, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
-import { injected, walletconnect, uauth } from "./connectors";
+import { injected, walletconnect, uauth, uauth2 } from "./connectors";
 import Navbar from "./components/Navbar"
 import Board from "./components/Board"
 
@@ -125,7 +125,7 @@ class App extends Component {
   }
 
   fetchData(){
-    uauth.uauth.user()
+    uauth2.uauth.user()
     .then((data) => {
       if (data) {
         if(this.state.isConnected == false){
