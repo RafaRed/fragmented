@@ -1,11 +1,27 @@
-import React , {useState} from "react";
+import React , {useState,useEffect} from "react";
 import "./Popup.css";
 import firebase from '../model/firebaseConnect'
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, onValue } from "firebase/database";
 
 function Popup(props) {
   const [img,setImg] = useState("https://i.imgur.com/bIWA1YE.png")
   const [url,setUrl] = useState("https://www.exemple.com/")
+  const [usedBlocks,setUsedBlocks] = useState();
+
+  useEffect(() =>{
+    const db = getDatabase();
+    const starCountRef = ref(db, 'blocks/');
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      const blockList = {};
+      for (let block in data){
+        blockList[data[block]['block_owner']] = data[block]
+      }
+      setUsedBlocks(blockList)
+  
+    });
+  },[]);
+
 
   const handleOnChangeImg = (e) => {
     setImg(e.target.value);
@@ -15,7 +31,12 @@ function Popup(props) {
   }
 
   const mintBlock = () => {
-    const db = getDatabase();
+    if(usedBlocks != undefined && usedBlocks.hasOwnProperty(props.hash)){
+      props.setTrigger(false);
+      alert("You already have a block, leave some for others :)")
+    }
+    else{
+      const db = getDatabase();
     set(ref(db, 'blocks/'+props.block), {
       block_id:props.block,
       block_url:url,
@@ -23,9 +44,15 @@ function Popup(props) {
       block_owner:props.hash
     });
     props.setTrigger(false);
+    }
+    
   }
 
-  
+  if(props.trigger && (props.domain == undefined || props.domain == "")){
+    alert("Please, login with your domain to claim this block.")
+    props.setTrigger(false)
+  }
+
   return props.trigger ? (
     <div className="popup">
       <div className="popup-inner">

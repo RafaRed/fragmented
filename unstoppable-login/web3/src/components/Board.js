@@ -54,7 +54,6 @@ function Board(props) {
       for (let block in data){
         blockList[data[block]['block_id']] = data[block]
       }
-      console.log(blockList)
       setUsedBlocks(blockList)
   
     });
