@@ -8,6 +8,7 @@ it by adding an image and URL for the block they claimed.
 https://github.com/RafaRed/fragmented
 
 ## Video Demo
+https://www.youtube.com/watch?v=O6TB9n7z6r8
 
 ## Live Demo
 https://fragmented.vercel.app/
