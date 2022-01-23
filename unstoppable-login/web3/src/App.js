@@ -83,9 +83,9 @@ class App extends Component {
   }
 
   logout() {
+    uauth.uauth.logout();
     this.props.web3ReactHook.deactivate();
     injected.deactivate();
-    uauth.uauth.logout();
     uauth.deactivate();
     this.setState({
       isConnected: false,
