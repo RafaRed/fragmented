@@ -13,13 +13,6 @@ https://fragmented.vercel.app/
 [![Video Demo](http://img.youtube.com/vi/O6TB9n7z6r8/0.jpg)](http://www.youtube.com/watch?v=O6TB9n7z6r8)  
 https://www.youtube.com/watch?v=O6TB9n7z6r8  
 
-## Contact
-**Discord:**  
-Rafael Souza#2474  
-
-**UnstoppableDomain registered account email address:**  
-rafaelszcardoso@gmail.com  
-
 ## Local Installation  
 1. Download the files
 ```
@@ -41,5 +34,12 @@ npm install
 npm run
 ```  
 5. Done
-- Now, the project should be running normally, just access: http://localhost:5000/
+- Now, the project should be running normally, just access: http://localhost:5000/  
+
+## Contact
+**Discord:**  
+Rafael Souza#2474  
+
+**UnstoppableDomain registered account email address:**  
+rafaelszcardoso@gmail.com  
 
