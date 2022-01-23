@@ -131,7 +131,7 @@ class App extends Component {
 
   render() {
     let login = true;
-    console.log(uauth.user)
+    console.log(uauth)
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>
