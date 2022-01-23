@@ -26,7 +26,6 @@ class App extends Component {
     this.connectMetamask = this.connectMetamask.bind(this);
     this.connectUnstoppable = this.connectUnstoppable.bind(this);
     this.logout = this.logout.bind(this);
-    this.listConnections = this.listConnections.bind(this);
     
   }
   
@@ -91,39 +90,8 @@ class App extends Component {
       domain: "",
     });
     
-    window.ethereum.removeListener("chainChanged", window.location.reload());
   }
 
-  listConnections() {
-    let connectAction;
-    if (this.state.isConnected) {
-      let address;
-      let hash = this.props.web3ReactHook.account;
-      if (this.state.showDomain) {
-        address = "Unstoppable Domain:" + this.state.domain + " " + hash;
-      } else {
-        address = "Wallet:" + hash;
-      }
-
-      connectAction = (
-        <>
-          {address}
-          <button onClick={this.logout}>Logout</button>
-        </>
-      );
-    } else {
-      connectAction = (
-        <>
-          <button onClick={this.connectMetamask}>Login with Metamask</button>
-
-          <button onClick={this.connectUnstoppable}>
-            Login with Unstoppable
-          </button>
-        </>
-      );
-    }
-    return <div>{connectAction}</div>;
-  }
 
   fetchData(){
     uauth2.uauth.user()
@@ -151,7 +119,7 @@ class App extends Component {
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain} logout={this.logout}/>
-      <Board/>
+      <Board domain={this.state.domain} hash={this.props.web3ReactHook.account}/>
 
       
       </>)

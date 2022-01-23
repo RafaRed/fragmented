@@ -19,7 +19,8 @@ function Popup(props) {
     set(ref(db, 'blocks/'+props.block), {
       block_id:props.block,
       block_url:url,
-      block_img:img
+      block_img:img,
+      block_owner:props.hash
     });
     props.setTrigger(false);
   }
@@ -34,7 +35,7 @@ function Popup(props) {
           </button>
            <p className="log">block {props.block}</p>
           <h1>CLAIM</h1>
-          Get this block for free as <span className="blue">{props.user}</span>
+          Get this block for free as <span className="blue">{props.domain}</span>
           <div className="warning">You can only mint one block, choose wisely.</div>
           <div className="imageBlock">
             <h2>Image Url</h2>

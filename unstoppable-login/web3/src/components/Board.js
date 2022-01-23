@@ -37,7 +37,7 @@ function CreateBoard(props){
     return rows;
 }
 
-function Board() {
+function Board(props) {
     
   const [buttonPopup, setButtonPopup] = useState(false);
   const [block, setBlock] = useState("0-0");
@@ -64,7 +64,7 @@ function Board() {
 
   return <div>
   <ReactTooltip id='block' place="right" type="info" getContent={(dataTip) => `${dataTip}`}/>
-  <Popup trigger={buttonPopup} block={block} setTrigger={setButtonPopup} user={"rafaelsouza.crypto"}>
+  <Popup trigger={buttonPopup} block={block} setTrigger={setButtonPopup} domain={props.domain} hash={props.hash}>
     <h1>test</h1>
   </Popup>
 
