@@ -11,9 +11,10 @@ table,tr,td{
     border-collapse: collapse;
 }
 .block{
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     background-color: rgb(231, 231, 231);
     box-shadow:inset 0px 0px 0px 1px #fff;
+    background-size:contain;
     
 }

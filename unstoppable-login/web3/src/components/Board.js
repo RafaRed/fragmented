@@ -9,8 +9,8 @@ import { getDatabase, ref, onValue} from "firebase/database";
 
 function CreateBoard(props){
 
-    let size_x = 181;
-    let size_y = 76;
+    let size_x = 113;
+    let size_y = 47;
     let rows = [];
     for (var i = 0; i < size_y; i++){
       let rowID = `row${i}`
