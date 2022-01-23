@@ -27,7 +27,7 @@ function Board() {
   const [block, setBlock] = useState("0-0");
   return <div>
   <ReactTooltip id='block' place="right" type="info" getContent={(dataTip) => `${dataTip}`}/>
-  <Popup trigger={buttonPopup} block={block} setTrigger={setButtonPopup}>
+  <Popup trigger={buttonPopup} block={block} setTrigger={setButtonPopup} user={"rafaelsouza.crypto"}>
     <h1>test</h1>
   </Popup>
 
