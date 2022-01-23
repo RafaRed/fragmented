@@ -126,12 +126,26 @@ class App extends Component {
     return <div>{connectAction}</div>;
   }
 
+  fetchData(){
+    uauth.uauth.user()
+    .then((data) => {
+      if (data) {
+        this.setState({
+          isConnected: true,
+          showDomain: true,
+          domain: localStorage.getItem("uauth-default-username")
+        });
+      } else {
 
+      }
+    })
+    .catch((_err) => {});
+  }
   
 
   render() {
     let login = true;
-    console.log(uauth)
+    {this.fetchData()}
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>

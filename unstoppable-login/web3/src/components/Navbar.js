@@ -17,6 +17,7 @@ function LoginButton(props) {
 
 
 function Navbar(props) {
+
   return (
     
     <div className="header">
@@ -33,5 +34,8 @@ function Navbar(props) {
     </div>
   );
 }
+
+
+
 
 export default Navbar;
