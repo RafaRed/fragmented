@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { injected, walletconnect, uauth } from "./connectors";
 import Navbar from "./components/Navbar"
@@ -27,7 +27,9 @@ class App extends Component {
     this.connectUnstoppable = this.connectUnstoppable.bind(this);
     this.logout = this.logout.bind(this);
     this.listConnections = this.listConnections.bind(this);
+    
   }
+  
 
   async connectMetamask() {
     console.log(injected);
@@ -124,10 +126,26 @@ class App extends Component {
     return <div>{connectAction}</div>;
   }
 
+  fetchData(){
+    uauth
+          .getAccount()
+          .then((account) => {
+            this.setState({
+              isConnected: true,
+              showDomain: true,
+              domain: localStorage.getItem("uauth-default-username")
+            });
+          })
+          .catch((e) => {
+            alert(e);
+            console.error(e);
+          });
+  }
+  
+
   render() {
     let login = true;
-    
-    console.log(uauth)
+    {this.fetchData()}
     return(
       <>
       <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>
