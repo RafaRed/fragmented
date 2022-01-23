@@ -20,7 +20,7 @@ h1{
     text-align: center;
 }
 .claim-as{
-    padding-bottom: 0.3rem;
+
     font-size: 1.2rem;
     color: #B0B0B0;
 }
@@ -30,4 +30,19 @@ h1{
 .header{
     display:flex;
     justify-content: space-between;
+}
+.loginText{
+    position: absolute;
+    color: white;
+    text-align: center;
+    align-content: center;
+    margin-left: 45px;
+    width: 300px;
+    height: 58px;
+    line-height: 65px;
+    pointer-events:none;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
+
 }

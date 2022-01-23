@@ -1,11 +1,11 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { injected, walletconnect, uauth } from "./connectors";
 import Navbar from "./components/Navbar"
 import Board from "./components/Board"
 
-
+import ReactTooltip from 'react-tooltip';
 
 function withUseWeb3React(Component) {
   return function WrappedComponent(props) {
@@ -124,10 +124,12 @@ class App extends Component {
   }
 
   render() {
+    let login = true;
     return(
       <>
-      <Navbar/>
+      <Navbar login={this.connectUnstoppable} connected={this.isConnected}/>
       <Board/>
+
       
       </>)
       

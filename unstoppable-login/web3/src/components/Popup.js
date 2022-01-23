@@ -9,10 +9,10 @@ function Popup(props) {
           <button className="close-btn" onClick={() => props.trigger(false)}>
             close
           </button>
-          {props.block}
+           <p className="log">block {props.block}</p>
           <h1>CLAIM</h1>
           Get this block for free as <span className="blue">{props.user}</span>
-          <div className="warning">You can only mint one block, choose wisely</div>
+          <div className="warning">You can only mint one block, choose wisely.</div>
           <div className="imageBlock">
             <h2>Image Url</h2>
             We recommend to use a small image, 16x16px
