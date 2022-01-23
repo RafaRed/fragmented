@@ -80,14 +80,12 @@ class App extends Component {
 
   logout() {
     uauth.uauth.logout();
-    this.props.web3ReactHook.deactivate();
-    injected.deactivate();
-    uauth.deactivate();
     this.setState({
       isConnected: false,
       showDomain: false,
       domain: "",
     });
+
     window.ethereum.removeListener("chainChanged", window.location.reload());
   }
 
