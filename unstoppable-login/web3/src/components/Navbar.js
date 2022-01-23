@@ -6,7 +6,7 @@ function LoginButton(props) {
   if (isLoggedIn) {
     return <div className="loginButton"><div className="loginText">{props.domain}
 
-    </div><input type="image" src={"images/ud-logged.png"} onClick={()=> {props.login()} } 
+    </div><input type="image" src={"images/ud-logged.png"} onClick={()=> {props.logout()} } 
     onMouseOver={e => (e.currentTarget.src = "images/ud-logged-hover.png")}
     onMouseOut={e => (e.currentTarget.src = "images/ud-logged.png")} /></div>;
   }
@@ -28,7 +28,7 @@ function Navbar(props) {
       </div>
       <div className="connect">
         <p className="claim-as">Claim a block as</p>
-        <LoginButton isLoggedIn={props.isConnected} login={props.login} domain={props.domain}/>
+        <LoginButton isLoggedIn={props.isConnected} login={props.login} domain={props.domain} logout={props.logout}/>
         
       </div>
     </div>

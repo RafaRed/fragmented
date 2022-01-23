@@ -85,7 +85,7 @@ class App extends Component {
   logout() {
     this.props.web3ReactHook.deactivate();
     injected.deactivate();
-    uauth.logout();
+    uauth.uauth.logout();
     uauth.deactivate();
     this.setState({
       isConnected: false,
@@ -151,7 +151,7 @@ class App extends Component {
     {this.fetchData()}
     return(
       <>
-      <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain}/>
+      <Navbar login={this.connectUnstoppable} isConnected={this.state.isConnected} domain={this.state.domain} logout={this.logout}/>
       <Board/>
 
       
