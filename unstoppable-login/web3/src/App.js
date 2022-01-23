@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component, useState, useEffect } from "react";
+import React, { Component, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { injected, walletconnect, uauth } from "./connectors";
 import Navbar from "./components/Navbar"
@@ -127,7 +127,8 @@ class App extends Component {
   }
 
   fetchData(){
-    uauth
+          try{
+            uauth
           .getAccount()
           .then((account) => {
             this.setState({
@@ -139,7 +140,10 @@ class App extends Component {
           .catch((e) => {
             alert(e);
             console.error(e);
-          });
+          });}
+          catch (e) {
+            console.log('Error')
+            }
   }
   
 
