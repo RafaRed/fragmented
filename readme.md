@@ -6,14 +6,14 @@ Each user will be able to redeem only one block through their Unstoppable Domain
 it by adding an image and URL for the block they claimed.
     
 ## Link to working code in a public repo
-https://github.com/RafaRed/fragmented
-
-## Video Demo
-https://www.youtube.com/watch?v=O6TB9n7z6r8  
-[![Video Demo](http://img.youtube.com/vi/O6TB9n7z6r8/0.jpg)](http://www.youtube.com/watch?v=O6TB9n7z6r8)
+https://github.com/RafaRed/fragmented  
 
 ## Live Demo
-https://fragmented.vercel.app/
+https://fragmented.vercel.app/  
+
+## Video Demo
+[![Video Demo](http://img.youtube.com/vi/O6TB9n7z6r8/0.jpg)](http://www.youtube.com/watch?v=O6TB9n7z6r8)  
+https://www.youtube.com/watch?v=O6TB9n7z6r8  
 
 ## Contact
 **Discord:**  
