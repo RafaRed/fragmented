@@ -64,13 +64,7 @@ class App extends Component {
         uauth
           .getAccount()
           window.location.reload()
-          .then((account) => {
-            window.location.reload()
-          })
-          .catch((e) => {
-            alert(e);
-            console.error(e);
-          });
+          
       })
       .catch((e) => {
         alert(e);
