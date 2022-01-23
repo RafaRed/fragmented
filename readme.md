@@ -24,7 +24,7 @@ cd fragmented/unstoppable-login/web3
 - Add a new web app on firebase and get your creadentials  
 - Replace the firebase credentials in the last lines of '.env' file on "fragmented/unstoppable-login/web3/.env"  
 
-3. Create a new application Unstoppable Domains  
+3. Create a new Unstoppable Domains application  
 - Register your app in https://unstoppabledomains.com/app-submission
 - Replace the creadentials in the first lines of '.env' file on "fragmented/unstoppable-login/web3/.env"  
 
