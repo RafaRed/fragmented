@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Navbar.css'
 
-function LoginButton(props) {
+
+function loginAction(props){
   const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    {props.logout()}
+  }
+  else{
+    {props.login()}
+  }
+}
+
+function LoginButton(props) {
+  const [buttonClicked, setButtonClicked ] = React.useState(false);
+  const isLoggedIn = props.isLoggedIn;
+
   if (isLoggedIn) {
     return <div className="loginButton"><div className="loginText">{props.domain}
 
-    </div><input type="image" src={"images/ud-logged.png"} onClick={()=> {props.logout()} } 
+    </div><input type="image" src={buttonClicked?"images/ud-logged-pressed.png":"images/ud-logged.png"} onClick={()=>setButtonClicked(true), ()=> loginAction(props)} 
     onMouseOver={e => (e.currentTarget.src = "images/ud-logged-hover.png")}
     onMouseOut={e => (e.currentTarget.src = "images/ud-logged.png")} /></div>;
   }
-  return <input type="image" src={"images/ud.png"} onClick={()=> {props.login()} } 
+  return <input type="image" src={buttonClicked?"images/ud-pressed.png":"images/ud.png"} onClick={()=>setButtonClicked(true), ()=> loginAction(props) } 
   onMouseOver={e => (e.currentTarget.src = "images/ud-hover.png")}
   onMouseOut={e => (e.currentTarget.src = "images/ud.png")}/>;
+
+
 }
 
 
