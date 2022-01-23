@@ -127,7 +127,7 @@ class App extends Component {
     let login = true;
     return(
       <>
-      <Navbar login={this.connectUnstoppable} connected={this.isConnected} domain={this.domain}/>
+      <Navbar login={this.connectUnstoppable} isConnected={this.isConnected} domain={this.domain}/>
       <Board/>
 
       

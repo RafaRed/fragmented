@@ -27,7 +27,7 @@ function Navbar(props) {
       </div>
       <div className="connect">
         <p className="claim-as">Claim a block as</p>
-        <LoginButton isLoggedIn={props.connected} login={props.login}/>
+        <LoginButton isLoggedIn={props.isConnected} login={props.login} domain={props.domain}/>
         
       </div>
     </div>
