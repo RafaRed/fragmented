@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import './Board.css'
 import ReactTooltip from 'react-tooltip';
 import Popup from './Popup'
-
+import firebase from '../model/firebase'
 
 function CreateBoard(props){
 
